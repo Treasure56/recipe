@@ -16,6 +16,7 @@ module.exports = {
         light:{
           DEFAULT: '#FFFFFF',
           light: '#F5D9CB',
+          200: '#F5F7FA',
           300: '#FAE5EC'
         },
         secondary:{

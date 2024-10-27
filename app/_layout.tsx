@@ -7,11 +7,11 @@ export default function layout() {
     <Stack>
         {
           routes.map((route) =>
-            <Stack.Screen key={route} name={route} options={{ headerShown: false }}/>
+            <Stack.Screen key={route} name={route} options={{ headerShown: false, animation: "fade_from_bottom" }} />
           )
         }
     </Stack>
   )
 }
 
-const routes = ["index", "about"]
+const routes = ["index", "about", "recipe"]
