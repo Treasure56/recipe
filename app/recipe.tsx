@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image } from "react-native";
+import { View, Text, Pressable, Image, ScrollView } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
@@ -7,7 +7,7 @@ import { router } from "expo-router";
 
 export default function Recipe() {
   return (
-    <View className="bg-white flex-1">
+    <ScrollView className="bg-white flex-1">
       <StatusBar style="dark" />
       <View className="mt-16 pb-2 mx-5 relative">
         <View className="flex-row">
@@ -22,6 +22,6 @@ export default function Recipe() {
         </Pressable>
       </View>
       <RecipeContents />
-    </View>
+    </ScrollView>
   );
 }

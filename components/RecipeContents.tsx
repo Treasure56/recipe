@@ -2,6 +2,7 @@ import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import { AntDesign, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import GuildeLine from "./GuildeLine";
+import Ingridients from "./Ingridients";
 
 export default function RecipeContents() {
   return (
@@ -29,6 +30,7 @@ export default function RecipeContents() {
         </Pressable>
       </View>
       <GuildeLine />
+      <Ingridients />
     </View>
   );
 }
