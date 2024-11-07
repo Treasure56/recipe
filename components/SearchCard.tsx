@@ -2,18 +2,20 @@ import React from "react";
 import { ScrollView, Text, View } from "react-native";
 import RecipeCard from "./RecipeCard";
 
-export default function RecipeList() {
+export default function SearchResults() {
   return (
     <View className="mt-8 mx-5">
       <Text className="text-2xl font-semibold">Latest Recipes</Text>
       <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        className="flex-row"
+        // horizontal
+        // showsHorizontalScrollIndicator={false}
+        // className="flex-row w-full"
       >
+        <View className="flex-row flex-wrap justify-evenly">
         {recipeItems.map((recipeItem, index) => (
           <RecipeCard key={index} {...recipeItem} />
         ))}
+        </View>
       </ScrollView>
     </View>
   );

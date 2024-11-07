@@ -1,8 +1,8 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, ImageSourcePropType } from "react-native";
 import React from "react";
 
 export type MenuProps = {
-  image: any;
+  image: ImageSourcePropType;
   name: string;
 };
 export default function MenuCard({ image, name }: MenuProps) {

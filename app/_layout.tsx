@@ -14,4 +14,4 @@ export default function layout() {
   )
 }
 
-const routes = ["index", "about", "recipe"]
+const routes = ["index", "about", "recipe", "search"]
