@@ -1,21 +1,23 @@
 import React from "react";
 import { ScrollView, Text, View } from "react-native";
 import RecipeCard from "./RecipeCard";
+import { Recipe } from "@/types/recipe";
 
-export default function SearchResults() {
+export default function SearchResults({recipes, title}:{recipes:Recipe[], title?:string}) {
   return (
-    <View className="mt-8 mx-5">
-      <Text className="text-2xl font-semibold">Latest Recipes</Text>
+    <View className="mt-8 mx-5 flex-1">
+      <Text className="text-2xl font-semibold">{title}</Text>
       <ScrollView
         // horizontal
-        // showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
         // className="flex-row w-full"
       >
         <View className="flex-row flex-wrap justify-evenly">
-        {recipeItems.map((recipeItem, index) => (
+        {recipes.map((recipeItem, index) => (
           <RecipeCard key={index} {...recipeItem} />
         ))}
         </View>
+        <View className="h-20"/>
       </ScrollView>
     </View>
   );

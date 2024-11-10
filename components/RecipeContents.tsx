@@ -1,17 +1,23 @@
-import { View, Text, Image, Pressable } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
-import { AntDesign, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Image, Pressable, Text, View } from "react-native";
 import GuildeLine from "./GuildeLine";
 import Ingridients from "./Ingridients";
+import { Recipe, RecipeDetailed } from "@/types/recipe";
+export type RecipeCardProps = {
+  data: RecipeDetailed;
+  
+} 
 
-export default function RecipeContents() {
+export default function RecipeContents({ data }: RecipeCardProps) {
+  console.log({title: data.title});
   return (
     <View className="mt-8 bg-light-200 flex-1 rounded-t-3xl">
       <View className="mx-5">
         <View className="items-center mt-4">
           <View className="w-10 h-1.5 bg-dark rounded-xl"></View>
           <Text className="text-3xl font-bold text-center mt-5">
-            Chicken Steak with Grilled Vagetables
+            {data.title}
           </Text>
         </View>
       </View>
@@ -22,16 +28,17 @@ export default function RecipeContents() {
             source={require("../assets/images/user.jpeg")}
           />
           <Text className="text-lg font-bold">
-            Vernon Nash <Text className="text-neutral-400">(10 recipes)</Text>
+            {data.sourceName} <Text className="text-neutral-400">({data.healthScore})</Text>
           </Text>
         </View>
         <Pressable className="bg-[#F84D50] rounded-full w-9 aspect-square items-center justify-center">
           <MaterialCommunityIcons name="cards-heart" size={18} color="white" />
         </Pressable>
       </View>
-      <GuildeLine />
+      <GuildeLine  data={data}/>
       <Ingridients />
       <View className="h-10" />
     </View>
+    
   );
 }

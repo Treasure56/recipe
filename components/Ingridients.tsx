@@ -13,7 +13,7 @@ export default function Ingridients() {
         {tabs.map((tab, i) => {
           const isActive = i === index;
           return (
-            <Pressable
+            <Pressable key={i}
               onPress={() => setIndex(i)}
               className={`rounded-[35px] py-4 flex-1 items-center justify-center ${
                 isActive ? "bg-light-200" : "bg-white"
