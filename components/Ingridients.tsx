@@ -3,8 +3,13 @@ import { View, Text, Pressable, ScrollView } from "react-native";
 import IngridientsCard from "./IngridientsCard";
 import IngridientList from "./IngridientList";
 import Steps from "./Steps";
+import { RecipeDetailed } from "@/types/recipe";
 
-export default function Ingridients() {
+export type IngredientsProps = {
+  data: RecipeDetailed;
+};
+
+export default function Ingridients({ data }: IngredientsProps) {
   const [index, setIndex] = useState(0);
 
   return (
@@ -13,7 +18,8 @@ export default function Ingridients() {
         {tabs.map((tab, i) => {
           const isActive = i === index;
           return (
-            <Pressable key={i}
+            <Pressable
+              key={i}
               onPress={() => setIndex(i)}
               className={`rounded-[35px] py-4 flex-1 items-center justify-center ${
                 isActive ? "bg-light-200" : "bg-white"
@@ -24,7 +30,13 @@ export default function Ingridients() {
           );
         })}
       </View>
-      {index === 0 ? <IngridientList ingridients={lists} /> : index === 1 ? <Steps/> : <></>}
+      {index === 0 ? (
+        <IngridientList ingridients={data.extendedIngredients} />
+      ) : index === 1 ? (
+        <Steps data={data.analyzedInstructions} />
+      ) : (
+        <></>
+      )}
     </View>
   );
 }

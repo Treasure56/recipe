@@ -4,13 +4,13 @@ import { Image, Pressable, Text, View } from "react-native";
 import GuildeLine from "./GuildeLine";
 import Ingridients from "./Ingridients";
 import { Recipe, RecipeDetailed } from "@/types/recipe";
-export type RecipeCardProps = {
+export type RecipeContentProps = {
   data: RecipeDetailed;
   
 } 
 
-export default function RecipeContents({ data }: RecipeCardProps) {
-  console.log({title: data.title});
+export default function RecipeContents({ data }: RecipeContentProps) {
+  // console.log({title: data.title});
   return (
     <View className="mt-8 bg-light-200 flex-1 rounded-t-3xl">
       <View className="mx-5">
@@ -36,7 +36,7 @@ export default function RecipeContents({ data }: RecipeCardProps) {
         </Pressable>
       </View>
       <GuildeLine  data={data}/>
-      <Ingridients />
+      <Ingridients data={data} />
       <View className="h-10" />
     </View>
     

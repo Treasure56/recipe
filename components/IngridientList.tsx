@@ -1,8 +1,10 @@
 import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import IngridientsCard, { IngridientsCardProps } from './IngridientsCard'
+import { RecipeDetailed } from '@/types/recipe'
 
-export default function IngridientList({ingridients}:{ingridients:IngridientsCardProps[]}) {
+
+export default function IngridientList({ingridients}:{ingridients:IngridientsCardProps[]}, {}) {
   return (
     <ScrollView
     horizontal

@@ -1,9 +1,7 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { AntDesign } from '@expo/vector-icons'
-import { useTailwind } from 'nativewind'
-import GuildeLineCard from './GuildeLineCard'
 import { RecipeDetailed } from '@/types/recipe'
+import React from 'react'
+import { View } from 'react-native'
+import GuildeLineCard from './GuildeLineCard'
 export type RecipeCardProps = {
     data: RecipeDetailed;
     
@@ -18,12 +16,12 @@ export default function GuildeLine({data}: RecipeCardProps) {
         },
         {
             icon: "bowl-mix-outline",
-            title: data.extendedIngredients.length + " steps",
-            color: "#FFBE27",
-        },
-        {
-            icon: "chef-hat",
             title:  data.analyzedInstructions[0].steps.length + " steps",
+            color: "#FFBE27",
+          },
+          {
+            icon: "currency-usd",
+            title:  " $" + data.pricePerServing,
             color: "#0089D5",
         },
     ]
