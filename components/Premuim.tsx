@@ -3,8 +3,14 @@ import React from "react";
 
 export default function Premuim() {
   return (
-    <View className="mx-5 mt-8 bg-secondary-dark rounded-[35px] p-7">
-      <View className="flex-row relative">
+    <View className="mx-5 mt-8 overflow-hidden w-full rounded-xl ">
+      <Image source={require("../assets/images/smoothie.jpeg")}  className="aspect-[736/736] h-48 w-full" />
+    
+    </View>
+  );
+}
+
+  {/* <View className="flex-row relative">
         <Image
           className="h-14 w-14"
           source={require("../assets/images/bluedot.png")}
@@ -17,12 +23,9 @@ export default function Premuim() {
           source={require("../assets/images/bluedot.png")}
         />
 
-      </View>
-      <View className="flex-row items-center justify-center">
+      </View> */}
+      {/* <View className="flex-row items-center justify-center">
       <Pressable className="items-center justify-center mt-5 rounded-[35px] py-5 px-10  bg-dark">
         <Text className="text-light text-lg font-bold">Go Premium</Text>
       </Pressable>
-      </View>
-    </View>
-  );
-}
+      </View> */}

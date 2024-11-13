@@ -7,8 +7,8 @@ export type MenuProps = {
 };
 export default function MenuCard({ image, name }: MenuProps) {
   return (
-    <View className="items-center mr-8">
-      <Image className="aspect-square w-52" source={image} />
+    <View className="items-center mr-4  px-4 py-4 rounded-xl">
+      <Image resizeMode="cover" className="aspect-square w-full h-14" source={image} />
       <Text className="font-semibold text-md mt-2">{name}</Text>
     </View>
   );

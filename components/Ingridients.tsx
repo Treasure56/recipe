@@ -13,8 +13,8 @@ export default function Ingridients({ data }: IngredientsProps) {
   const [index, setIndex] = useState(0);
 
   return (
-    <View className="mx-5">
-      <View className="flex-row mt-5 bg-light items-center justify-between rounded-[35px] p-2">
+    <View className="">
+      <View className="flex-row mt-5 mx-5 bg-light items-center justify-between rounded-[35px] p-2">
         {tabs.map((tab, i) => {
           const isActive = i === index;
           return (

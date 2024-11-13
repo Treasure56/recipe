@@ -16,7 +16,7 @@ export default function GuildeLine({data}: RecipeCardProps) {
         },
         {
             icon: "bowl-mix-outline",
-            title:  data.analyzedInstructions[0].steps.length + " steps",
+            title:  data.analyzedInstructions[0].steps.length === 1 ? "1 step" : data.analyzedInstructions[0].steps.length + " steps",
             color: "#FFBE27",
           },
           {
@@ -25,7 +25,7 @@ export default function GuildeLine({data}: RecipeCardProps) {
             color: "#0089D5",
         },
     ]
-    console.log({minutes: data.cookingMinutes});
+    // console.log({minutes: data.cookingMinutes});
     
   return (
     <View className=' flex-row mt-5 mx-5 bg-white rounded-2xl p-3'>

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "recipe",
-    "slug": "recipe",
+    "name": "dishify",
+    "slug": "dishify",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.simplicitytreasure.dishify"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +32,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "79f860ab-7921-41f2-aac0-d257783465c8"
+      }
     }
   }
 }

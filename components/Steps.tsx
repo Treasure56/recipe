@@ -11,7 +11,7 @@ export default function Steps({data}:{data:{
   
   return (
     <View className='bg-light mt-4 rounded-md p-4 flex-1'>
-      <Text className='text-3xl font-bold text-start'>Steps</Text>
+      <Text className='text-3xl  font-bold text-start'>Steps</Text>
       {
        data.map((step, index) => (
          <View key={index}>

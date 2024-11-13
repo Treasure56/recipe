@@ -12,7 +12,7 @@ export default function RecipeList() {
   // console.log({data})
   return (
     <View className="mt-8 mx-5">
-      <Text className="text-2xl font-semibold">Latest Recipes</Text>
+      <Text className="text-2xl font-semibold">Recipes for you</Text>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}

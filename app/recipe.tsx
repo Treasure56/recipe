@@ -17,7 +17,7 @@ export default function Recipe() {
     <>
       <Pressable
         onPress={() => router.back()}
-        className="bg-[#E5FAF4] z-[20] rounded-xl w-10 aspect-square items-center justify-center absolute left-5 top-12"
+        className="bg-[#E5FAF4] z-[20] rounded-xl w-10 aspect-square items-center justify-center absolute left-5 top-9"
       >
         <Ionicons name="chevron-back-outline" size={24} color="black" />
       </Pressable>
@@ -28,10 +28,11 @@ export default function Recipe() {
       ) : (
         <ScrollView className="bg-white flex-1">
           <StatusBar style="dark" />
-          <View className="mt-16 pb-2 mx-5 relative">
-            <View className="flex-row">
+          <View className="mt-20 pb-2 mx-5 relative">
+            <View className="flex-row  rounded-xl overflow-hidden items-center justify-center">
               <Image
-                resizeMode="contain"
+                resizeMode="cover"
+                
                 className="flex-1 aspect-[5/4] "
                 source={{uri:data.image}}
               />

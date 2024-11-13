@@ -7,7 +7,7 @@ export default function StepCard({ingredients, number, step}:InstructionStep) {
     <View className=''>
         <View className='mt-4 mr-3 flex-row'>
       <Text className='mr-4'>{number}</Text>
-      <View>
+      <View className=''>
             <Text>{step}</Text>
             {ingredients.length > 0 && (
               <View className='flex-row mt-2 '>
