@@ -32,14 +32,11 @@ export default function Index() {
       </View>
       <View className="mt-5 flex-row mx-5">
         <Pressable
-          onPress={() => router.push("/about")}
+          onPress={() => router.replace("/about")}
           className="rounded-[35px] mr-6 border-2 border-dark bg-secondary items-center py-5 flex-1"
         >
           <Text className="text-dark font-semibold text-xl">Get Started</Text>
         </Pressable>
-        {/* <Pressable className="rounded-[35px] border-2 border-dark bg-primary items-center py-5 flex-1">
-          <Text className="text-dark font-semibold text-xl">Sign up</Text>
-        </Pressable> */}
       </View>
     </View>
   );

@@ -3,23 +3,33 @@ import React, { useState } from "react";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { Recipe } from "@/types/recipe";
+import { getRecipeInformation } from "@/actions/getRecipeInformation";
+import { useQuery } from "@tanstack/react-query";
 
 export type RecipeCardProps = Recipe & {
     duration?: string;
+    useDynamicImage?: boolean;
 };
-export default function RecipeCard({ duration, image: img, title, id}: RecipeCardProps) {
+export default function RecipeCard({ duration, image: img, title, id, useDynamicImage = false}: RecipeCardProps) {
   const [color] = useState(()=>{
     // return(colors[Math.floor(Math.random() * colors.length)])
   })
 // console.log({title});
 
+const { data, isLoading } = useQuery({
+  queryKey: ["recipe", id],
+  queryFn: async () => {
+    if(!useDynamicImage) return null;
+    return await getRecipeInformation(id.toString())
+  },
+});
   
   return (
     <Pressable onPress={() => router.push(`/recipe?id=${id}`)} className=" !rounded-xl items-center bg-neutral-100 overflow-hidden mt-8 mr-4  w-[40vw] h-60 ">
       <View className="bg-light w-full h-24  rounded-md overflow-hidden items-center justify-center">
         <Image resizeMode="cover"
           className="w-full h-full"
-          source={{uri:img}}
+          source={{uri:useDynamicImage && data ? data.image : img}}
         />
       </View>
       <Text className="font-semibold text-lg mt-4 flex-1 text-center p-2">{title}</Text>

@@ -22,7 +22,15 @@ export default function Recipe() {
         <Ionicons name="chevron-back-outline" size={24} color="black" />
       </Pressable>
       {isLoading ? (
-        <Text>Loading...</Text>
+        <View className=" mx-5">
+          <View className="rounded-lg bg-neutral-200 h-60 mt-24"></View>
+          <View className="flex-row justify-between items-center mt-10">
+            <View className="rounded-full bg-neutral-200 w-16 h-16"></View>
+            <View className="rounded-lg flex-1 ml-4 bg-neutral-200 h-6"></View>
+          </View>
+          <View className="rounded-3xl bg-neutral-200 h-20 mt-6"></View>
+          <View className="rounded-lg bg-neutral-200 h-60 mt-10"></View>
+        </View>
       ) : !data ? (
         <Text>Connection error</Text>
       ) : (
@@ -32,9 +40,8 @@ export default function Recipe() {
             <View className="flex-row  rounded-xl overflow-hidden items-center justify-center">
               <Image
                 resizeMode="cover"
-                
                 className="flex-1 aspect-[5/4] "
-                source={{uri:data.image}}
+                source={{ uri: data.image }}
               />
             </View>
           </View>

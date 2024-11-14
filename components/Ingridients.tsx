@@ -4,6 +4,7 @@ import IngridientsCard from "./IngridientsCard";
 import IngridientList from "./IngridientList";
 import Steps from "./Steps";
 import { RecipeDetailed } from "@/types/recipe";
+import SimilarRecipes from "./SimilarRecipe";
 
 export type IngredientsProps = {
   data: RecipeDetailed;
@@ -35,33 +36,12 @@ export default function Ingridients({ data }: IngredientsProps) {
       ) : index === 1 ? (
         <Steps data={data.analyzedInstructions} />
       ) : (
-        <></>
+        <SimilarRecipes id={data.id} />
       )}
     </View>
   );
 }
 
-const tabs = ["Ingredients", "Steps"];
+const tabs = ["Ingredients", "Steps", "Similar"];
 
-const lists = [
-  {
-    img: require("../assets/images/chips.png"),
-    title: "Chopped",
-    name: "Potato",
-  },
-  {
-    img: require("../assets/images/raw.png"),
-    title: "500 Gm",
-    name: "Chicken",
-  },
-  {
-    img: require("../assets/images/tomatoes.png"),
-    title: "Baby",
-    name: "Tomatoes",
-  },
-  {
-    img: require("../assets/images/Parsley.jpeg"),
-    title: "Fresh",
-    name: "Parsley",
-  },
-];
+

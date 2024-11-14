@@ -31,7 +31,7 @@ export default function GuildeLine({data}: RecipeCardProps) {
     <View className=' flex-row mt-5 mx-5 bg-white rounded-2xl p-3'>
        {
         steps.map((step, index) => 
-            <GuildeLineCard key={step.icon} {...step} />
+            <GuildeLineCard key={index} {...step} />
         )
        }
     </View>

@@ -7,12 +7,12 @@ export default function StepCard({ingredients, number, step}:InstructionStep) {
     <View className=''>
         <View className='mt-4 mr-3 flex-row'>
       <Text className='mr-4'>{number}</Text>
-      <View className=''>
+      <View className='flex-1'>
             <Text>{step}</Text>
             {ingredients.length > 0 && (
               <View className='flex-row mt-2 '>
                 <Text className='mr-4 font-semibold'>Ingredients:</Text>
-                <View className='flex-row flex-wrap'>
+                <View className='flex-row flex-wrap mr-20'>
                   {
                     ingredients.map((ingredient, index) => (
                       <View key={index} className=' bg-red-100 rounded-[30px] mt-1  mr-2 py-0.5 px-2   '>

@@ -3,16 +3,16 @@ import { ScrollView, Text, View } from "react-native";
 import RecipeCard from "./RecipeCard";
 import { useQuery } from "@tanstack/react-query";
 import { fetchRandomRecipes } from "@/actions/fetchRandomRecipes";
+import { fetchSimilarRecipes } from "@/actions/fetchSimilarRecipes";
 
-export default function RecipeList() {
+export default function SimilarRecipes({id}:{id:number}) {
   const { data, isLoading } = useQuery({
-    queryKey: ["recipes"],
-    queryFn: async () => await fetchRandomRecipes(),
+    queryKey: ["similar", id],
+    queryFn: async () => await fetchSimilarRecipes(id.toString()),
   });
-  // console.log({data})
+  console.log({data})
   return (
     <View className="mt-8 mx-5">
-      <Text className="text-2xl font-semibold">Recipes for you</Text>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -29,7 +29,7 @@ export default function RecipeList() {
         ) : (
           // <Text>Loading...</Text>
           data?.map((recipeItem, index) => (
-            <RecipeCard key={index} {...recipeItem} title={recipeItem.title} />
+            <RecipeCard useDynamicImage key={index} {...recipeItem} title={recipeItem.title} />
           ))
         )}
        

@@ -12,10 +12,8 @@ export default function About() {
   return (
     <ScrollView className="bg-light ">
       <StatusBar style="dark" />
-      <Pressable onPress={() => router.replace("/")} className="mt-16 mx-5">
-      {/* <Ionicons name="chevron-back-outline" size={24} color="black" /> */}
-      </Pressable>
-      <View className="mt-4 mx-5 ">
+      
+      <View className="mt-20 mx-5 ">
         <Text className="font-semibold text-3xl">What would you like to cook?</Text>
       </View>
       <Search />
