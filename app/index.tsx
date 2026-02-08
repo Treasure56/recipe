@@ -27,7 +27,7 @@ export default function Index() {
 
       <View className="mx-5 mt-8">
         <Text className="text-7xl font-bold text-dark">
-          Start {"\n"}Cooking
+          Start {"\n"}Cooking 
         </Text>
       </View>
       <View className="mt-5 flex-row mx-5">
